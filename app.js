@@ -1,13 +1,14 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const {PORT,mongodbURL}=require('./config')
+
 const app = express();
 var mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 app.use(bodyparser.urlencoded({ extended: true }))
 
-mongoose.connect('mongodb+srv://jayeshlodha177:jayesh@cluster0.csj3w03.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-const port = 80;
+mongoose.connect(mongodbURL);
 
 // Define Mongoose schema
 const contactSchema = new mongoose.Schema({
@@ -48,6 +49,6 @@ app.post('/contact', (req, res)=>{
     });
 })
 //  Start the server
-app.listen(port, () => {
-        console.log(`The application started successfully on port ${port}`);
+app.listen(PORT, () => {
+        console.log(`The application started successfully on port ${PORT}`);
 });
