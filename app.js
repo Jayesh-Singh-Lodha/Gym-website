@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 app.use(bodyparser.urlencoded({ extended: true }))
 
-mongoose.connect('mongodb://localhost/contactGym')
+mongoose.connect('mongodb+srv://jayeshlodha177:jayesh@cluster0.csj3w03.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 const port = 80;
 
 // Define Mongoose schema
@@ -49,5 +49,5 @@ app.post('/contact', (req, res)=>{
 })
 //  Start the server
 app.listen(port, () => {
-        console.log('The application started successfully on port ${port}');
+        console.log(`The application started successfully on port ${port}`);
 });
