@@ -9,7 +9,7 @@ const bodyparser = require("body-parser");
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "/",
+    origin: "https://gym-website-weld.vercel.app/",
     methods: ["POST", "GET"],
     credentials: true,
   })
