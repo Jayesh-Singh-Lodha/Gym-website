@@ -15,7 +15,7 @@ app.use(
   })
 );
 
-const PORT = 80;
+const PORT = process.env.PORT || 3000;
 const mongodbURL =
   "mongodb+srv://jayeshlodha177:jayesh@cluster0.csj3w03.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
