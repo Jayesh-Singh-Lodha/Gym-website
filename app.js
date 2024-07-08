@@ -1,12 +1,14 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const {PORT,mongodbURL}=require('./config')
 
 const app = express();
 var mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 app.use(bodyparser.urlencoded({ extended: true }))
+
+const PORT=80;
+const mongodbURL='mongodb+srv://jayeshlodha177:jayesh@cluster0.csj3w03.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(mongodbURL);
 
