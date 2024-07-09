@@ -2,8 +2,8 @@ doctype html
 html
     head 
         title JGF
-        style 
-            include ../static/style.css 
+    block style
+        link(rel='stylesheet', href='/static/style.css')
     body 
         navbar#navbar
             div#logo
